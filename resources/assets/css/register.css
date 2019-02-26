@@ -4,7 +4,7 @@ html, body {
     overflow: hidden;
 }
 
-.login {
+.register {
     background-color: #111;
     opacity: .8;
     width: 35%;
@@ -14,19 +14,22 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     height: 800px;
     margin-top:-5%;
+    -webkit-box-shadow: 0 0 25px #444;
+    -moz-box-shadow: 0 0 25px #444;
+    box-shadow: 0 0 25px #444;
 }
 
 .container {
     width: 100%;
 }
 
-.svg-inline--fa {
+.svg-inline--fa-2 {
     width: 30%;
     margin-left: 35%;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
-.h2-login {
+.h2-register {
     width: 100%;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -59,6 +62,22 @@ li {
     border: none;
 }
 
+#name {
+    background-color: #111;
+    color: #fff;
+    opacity: .9;
+    margin-left: 30%;
+    border: none;
+}
+
+#password-confirm {
+    background-color: #111;
+    color: #fff;
+    opacity: .9;
+    margin-left: 15%;
+    border: none;
+}
+
 .beforeInput {
     border-right: 1px solid #fff;
 }
@@ -66,7 +85,6 @@ li {
 .afterInput {
     cursor: pointer;
 }
-
 
 .beforeInput, .afterInput {
     padding: 0.6rem 0.8rem;
@@ -82,68 +100,6 @@ li {
     position: relative;
     width: 60%;
     margin-left:20%;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 45px;
-    height: 19px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #222;
-    opacity: .9;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 15px;
-    width: 15px;
-    left: 2px;
-    bottom: 2px;
-    background-color: #c32b32;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #fff;
-    opacity: .8;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #c32b32;
-    opacity: .8;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
 
 .form-remember {
@@ -173,7 +129,7 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
-.btn-login {
+.btn-register {
     color: #636b6f;
     width:50%;
     background-color: transparent;
@@ -193,30 +149,25 @@ button {
     text-align: center;
 }
 
-.pwd-reset {
-    font-size: 10px;
-    width: 60%;
-    margin-left: 23%;
-}
-
 button:hover {
     border:2px solid #636b6f;
     background-color: #333;
 }
 
-.login-box {
+.register-box {
     border: 1px solid #636b6f;
     width: 60%;
-    margin-left: 20%;
+    margin-left: 19%;
     padding: 5px;
     margin-top: 7%;
 }
 
-.paragraph {
+.paragraph-register {
     width: 100%;
-    margin-left: 15%;
+    margin-left: 12%;
 }
 
-.paragraph a {
-    margin-left: 10%;
+.nav-link-r {
+    margin-left: 20%;
+
 }

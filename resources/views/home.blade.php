@@ -30,7 +30,7 @@
                         @endrole
                     </div>
 
-
+                    <a href="{{ url('/logout') }}"> logout </a>
                 </div>
             </div>
         </div>

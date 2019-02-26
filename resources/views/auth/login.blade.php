@@ -17,7 +17,7 @@
                     @csrf
 
                     <div class="row">
-                        <div class="input-email">
+                        <div class="input-div">
                             <div class="beforeInput">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                     <path fill="#fff"
@@ -41,7 +41,7 @@
                     <div class="row">
 
                         <div class="col-md-6">
-                            <div class="input password">
+                            <div class="input-div">
                                 <div class="beforeInput">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                         <path fill="#fff"
