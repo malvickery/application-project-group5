@@ -1,0 +1,106 @@
+html, body {
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-left {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    background-color: #111;
+    opacity: .8;
+    border: 1px solid #111;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+.top-left:hover {
+    border:1px solid #333;
+    background-color: #333;
+
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+    text-transform:uppercase;
+}
+
+.title-two {
+    margin-top:-3%;
+    font-size:50px;
+    text-transform:uppercase;
+}
+
+.title-three {
+    font-size:30px;
+    text-transform:uppercase;
+}
+
+.top-left > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a {
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#636b6f;
+}
+
+.box {
+    padding-top:5%;
+    background-color: #111111;
+    opacity: .85;
+    height: 300px;
+    width: 1000px;
+}
+
+button {
+    width:20%;
+    background-color: transparent;
+    opacity: .8;
+    border: 2px solid #636b6f;
+    border-radius: 100px;
+    padding: 5px;
+    font-size: 120%;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top:2%;
+}
+
+button:first-child {
+    margin-right:7%;
+}
+
+button:hover {
+    border:2px solid #636b6f;
+    background-color: #333;
+}
