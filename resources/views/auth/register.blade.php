@@ -113,6 +113,10 @@
                             </button>
                         </div>
                     </div>
+                <select name="role">
+                    <option value="student">I am a Student</option>
+                    <option value="instructor">I am an Instructor</option>
+                </select>
             </form>
             <div class="register-box">
                 <p class="paragraph-register">Already have an account?
