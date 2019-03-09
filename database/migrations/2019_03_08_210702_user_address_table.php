@@ -13,7 +13,18 @@ class UserAddressTable extends Migration
      */
     public function up()
     {
-        //
+        DB::statement("
+CREATE TABLE `user_address` (
+    `ID`                    int(9) NOT NULL AUTO_INCREMENT,
+    `address_line_one`      varchar(200),
+    `address_line_two`      varchar(200),
+    `city`                  varchar(100),
+    `province`              varchar(100),
+    `country`               varchar(100),
+    `postal_code`           varchar(9),
+    CONSTRAINT `User_Address_PK` PRIMARY KEY (`ID`)
+
+);");
     }
 
     /**
