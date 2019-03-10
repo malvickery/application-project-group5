@@ -22,13 +22,12 @@ CREATE TABLE `training_schedule` (
     `training_day`          varchar(20),
     `time_begins`           varchar(20),
     `time_ends`             varchar(20),
-    CONSTRAINT `Training_Schedule_PK` PRIMARY KEY (`ID`),
-    CONSTRAINT `Training_Student_FK` FOREIGN KEY (`student_ID`) REFERENCES `student` (`student_ID`),
-    CONSTRAINT `Training_Instructor_FK` FOREIGN KEY (`instructor_ID`) REFERENCES `instructor` (`instructor_ID`)
+    CONSTRAINT `Training_Schedule_PK` PRIMARY KEY (`ID`)
 );
 ");
     }
-
+//CONSTRAINT `Training_Student_FK` FOREIGN KEY (`student_ID`) REFERENCES `student` (`student_ID`),
+//CONSTRAINT `Training_Instructor_FK` FOREIGN KEY (`instructor_ID`) REFERENCES `instructor` (`instructor_ID`)
     /**
      * Reverse the migrations.
      *

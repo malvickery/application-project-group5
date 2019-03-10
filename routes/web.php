@@ -25,4 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@index')->name('profile');
 
 //Route::get('/student/create', 'StudentController@create')->name('student');
-Route::resource('student', 'StudentController');
+//Route::resource('student-info', 'StudentInfoController');
+Route::get('/student-info/create', 'StudentInfoController@create');
+Route::post('/student-info', 'StudentInfoController@store');

@@ -29,7 +29,6 @@ CREATE TABLE `student_health` (
     `shunt_blockage`        varchar(50),
     `reaction`              varchar(100),
     `toileting_needs`       varchar(200),
-    `photo_relese`          varchar(9),
     `waiver`                varchar(9),
     `paid`                  varchar(9),
     CONSTRAINT `Student_Health_PK` PRIMARY KEY (`student_health_ID`)

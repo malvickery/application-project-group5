@@ -34,7 +34,7 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Track Three') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -87,6 +87,12 @@
     </nav>
 
     <main class="py-4">
+        @if(Session::has('message'))
+            <p class="alert alert-success text-center">{{ Session::get('message') }}</p>
+        @endif
+            @if(Session::has('error'))
+                <p class="alert alert-danger text-center">{{ Session::get('error') }}</p>
+            @endif
         @yield('content')
     </main>
 </div>
