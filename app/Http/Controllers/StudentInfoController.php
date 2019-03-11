@@ -68,6 +68,11 @@ class StudentInfoController extends Controller
             'date_of_birth' => 'required',
             'years_experience' => 'required',
             'years_in_program' => 'required',
+            'special_instruction' => 'required',
+            'ski_type' => 'required',
+            'preferred_day' => 'required',
+            'alternate_day' => 'required',
+            'preferred_instructor' => 'required',
         ]);
 
         /* Create the user address entry */
@@ -104,6 +109,11 @@ class StudentInfoController extends Controller
             'emergency_contact' => $contact->emergency_contact,
             'relationship' => $contact->relationship,
             'photo_release' => $request->get('photo_release'),
+            'special_instruction' => $request->get('special_instruction'),
+            'preferred_day' => $request->get('preferred_day'),
+            'alternate_day' => $request->get('alternate_day'),
+            'ski_type' => $request->get('ski_type'),
+            'preferred_instructor' => $request->get('preferred_instructor'),
             'address_ID' => $userAddress->id,
             'contact_ID' => $contact->id,
             'user_ID' => Auth::user()->id
