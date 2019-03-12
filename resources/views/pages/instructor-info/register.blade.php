@@ -6,25 +6,31 @@
             <div class="card-body">
                 <form action="/student-info" method="post">
                     @csrf
-                    <h3 class="card-title">New Track Three Student Registration Form</h3>
+                    <h3 class="card-title">New Track Three Instructor Registration Form</h3>
 
-                    <h4 class="card-title pt-2">Student Information</h4>
+                    <h4 class="card-title pt-2">Instructor Information</h4>
                     <hr>
                     <div class="form-row">
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="first_name">First Name</label>
-                            <input type="text" class="form-control" id="first_name"  name="first_name" placeholder="First"
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                   placeholder="First"
                                    required>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="last_name">Last Name</label>
                             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last"
                                    required>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email"
-                                  name="email" placeholder="example@example.com" required>
+                                   name="email" placeholder="example@example.com" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="date_of_birth">Date of Birth</label>
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                   required>
                         </div>
                     </div>
 
@@ -57,41 +63,6 @@
                                 <input type="number" class="form-control" id="height_inch" placeholder="0"
                                        aria-describedby="inputGroupPrepend2" name="height_inch" required>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="date_of_birth">Date of Birth</label>
-                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
-                                   required>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="years_experience">Number Of Years Skiing or Snow Boarding:</label>
-                            <input type="number" class="form-control" id="years_experience" name="years_experience"
-                                   required>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="years_in_program">Number Of Years In Track 3:</label>
-                            <input type="number" class="form-control" id="years_in_program" name="years_in_program"
-                                   required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="preferred_instructor">Preferred Instructor</label>
-                            <select class="form-control" id="preferred_instructor" name="preferred_instructor">
-                                <option selected>* No Guarantee *</option>
-                                <option value="Instructor 1">Instructor 1</option>
-                                <option value="Instructor 2">Instructor 2</option>
-                                <option value="Instructor 3">Instructor 3</option>
-                            </select>
-                        </div>
-                        <div class="col-md-8 mb-3">
-                            <label for="special_instruction">Special Instructions</label>
-                            <input type="text" class="form-control" id="special_instruction" name="special_instruction" placeholder="ie. Call parent/guardian if behavioural issues "
-                                   required>
                         </div>
                     </div>
 
@@ -159,7 +130,8 @@
 
                         <div class="col-md-3 mb-3">
                             <label for="postal_code">Postal Code</label>
-                            <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="XXX XXX"
+                            <input type="text" class="form-control" id="postal_code" name="postal_code"
+                                   placeholder="XXX XXX"
                                    required>
                         </div>
                     </div>
@@ -170,44 +142,80 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="phone">Phone Number</label>
-                            <input type="number"  class="form-control" id="phone" name="phone" placeholder="(xxx) xxx-xxxx"
+                            <input type="number" class="form-control" id="phone" name="phone"
+                                   placeholder="(xxx) xxx-xxxx"
                                    required>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="alt_phone">Alt Phone Number</label>
-                            <input type="number"  class="form-control" id="alt_phone" name="alt_phone" placeholder="(xxx) xxx-xxxx"
+                            <label for="alt_phone">Alternate Phone Number</label>
+                            <input type="number" class="form-control" id="alt_phone" name="alt_phone"
+                                   placeholder="(xxx) xxx-xxxx"
                                    required>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="emergency_contact">Emergency Contact</label>
-                            <input type="text" class="form-control" id="emergency_contact" name="emergency_contact" placeholder=""
+                            <input type="text" class="form-control" id="emergency_contact" name="emergency_contact"
+                                   placeholder=""
                                    required>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="relationship">Relationship</label>
-                            <input type="text" class="form-control" id="relationship" name="relationship" placeholder="ie. Mother"
+                            <input type="text" class="form-control" id="relationship" name="relationship"
+                                   placeholder="ie. Mother"
                                    required>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="emergency_phone">Emergency Contact Phone Number</label>
-                            <input type="number"  class="form-control" id="emergency_phone" name="emergency_phone" placeholder="(xxx) xxx-xxxx"
+                            <input type="number" class="form-control" id="emergency_phone" name="emergency_phone"
+                                   placeholder="(xxx) xxx-xxxx"
                                    required>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="emergency_alt_phone">Emergency Contact Alt Phone Number</label>
-                            <input type="number"  class="form-control" id="emergency_alt_phone" name="emergency_alt_phone" placeholder="(xxx) xxx-xxxx"
+                            <label for="emergency_alt_phone">Emergency Contact Alternate Phone Number</label>
+                            <input type="number" class="form-control" id="emergency_alt_phone"
+                                   name="emergency_alt_phone" placeholder="(xxx) xxx-xxxx"
                                    required>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="photo_release" value="true" name="photo_release">
-                            <label class="form-check-label" for="photo_release">
-                                Do you agree to a photo release?
-                            </label>
+                    <h4 class="card-title pt-2">Certifications and Experience</h4>
+                    <hr>
+                    <div class="form-row align-items-center">
+
+                        <div class="col-md-4">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox"  name="is_CSIA" id="is_CSIA">
+                                <label class="form-check-label" for="is_CSIA">
+                                    Are you CSIA Certified?
+                                </label>
+                            </div>
+                            <label class="sr-only" for="CSIA_number">CSIA Certification #:</label>
+                            <input type="text" class="form-control mb-2" name="CSIA_number" id="CSIA_number"
+                                   placeholder="CSIA Certification # ">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_CSCF" id="is_CSCF">
+                                <label class="form-check-label" for="is_CSCF">
+                                    Are you CSCF Certified?
+                                </label>
+                            </div>
+                            <label class="CSCF_number" for="inlineFormInput">CSCF Certification #:</label>
+                            <input type="text" class="form-control mb-2" name="CSCF_number" id="CSCF_number"
+                                   placeholder="CSCF Certification # ">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_CASI" id="is_CASI">
+                                <label class="form-check-label" for="is_CASI">
+                                    Are you CASI Certified?
+                                </label>
+                            </div>
+                            <label class="sr-only" for="CASI_number">CASI Certification #:</label>
+                            <input type="text" class="form-control mb-2"  name="CASI_number" id="CASI_number"
+                                   placeholder="CASI Certification # ">
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Submit form</button>
