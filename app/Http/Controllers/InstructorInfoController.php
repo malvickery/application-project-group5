@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Certifications;
+use App\Contact;
 use App\InstructorExperience;
 use App\InstructorInfo;
+use App\UserAddress;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InstructorInfoController extends Controller
 {
@@ -26,18 +30,16 @@ class InstructorInfoController extends Controller
     public function create()
     {
         return view('pages/instructor-info/register');
-
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
         /* Create the user address entry */
         $userAddress = UserAddress::create([
             'address_line_one' => $request->get('address_line_one'),
@@ -57,11 +59,24 @@ class InstructorInfoController extends Controller
             'relationship' => $request->get('relationship'),
         ]);
 
-        /*Create instructor experience entry*/
-
-        $instructorExperience = InstructorExperience::create([
-           'is_'
+        /*Create certifications entry*/
+        $certifications = Certifications::create([
+            'is_CSIA' => $request->get('is_CSIA'),
+            'is_CSCF' => $request->get('is_CSCF'),
+            'is_CASI' => $request->get('is_CASI'),
+            'CSIA_number' => $request->get('CSIA_number'),
+            'CSCF_number' => $request->get('CSCF_number'),
+            'CASI_number' => $request->get('CASI_number'),
         ]);
+
+        /*Create instructor_experience entry*/
+        $instructor_experience = InstructorExperience::create([
+            'exp_related_to_track3' => $request->get('exp_related_to_track3'),
+            'other_experience' => $request->get('is_CSCF'),
+            'ski_type' => $request->get('ski_type'),
+            'certification_ID' => $certifications->id
+        ]);
+
         /* Create the Student Info entry */
         $instructorInfo = InstructorInfo::create([
             'first_name' => $request->get('first_name'),
@@ -72,14 +87,13 @@ class InstructorInfoController extends Controller
             'height_feet' => $request->get('height_feet'),
             'height_inch' => $request->get('height_inch'),
             'date_of_birth' => $request->get('date_of_birth'),
-            'emergency_contact' => $contact->emergency_contact,
-            'relationship' => $contact->relationship,
             'preferred_day' => $request->get('preferred_day'),
             'alternate_day' => $request->get('alternate_day'),
             'ski_type' => $request->get('ski_type'),
             'address_ID' => $userAddress->id,
             'contact_ID' => $contact->id,
-            'user_ID' => Auth::user()->id
+            'user_ID' => Auth::user()->id,
+            'experience_ID' => $instructor_experience->id,
         ]);
 
         return back()->with('message', 'Thank you for registering');
@@ -88,7 +102,7 @@ class InstructorInfoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -99,7 +113,7 @@ class InstructorInfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -110,8 +124,8 @@ class InstructorInfoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -122,7 +136,7 @@ class InstructorInfoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -4,7 +4,7 @@
     <div class="container-fluid d-flex justify-content-center">
         <div class="card">
             <div class="card-body">
-                <form action="/student-info" method="post">
+                <form action="/instructor-info" method="post">
                     @csrf
                     <h3 class="card-title">New Track Three Instructor Registration Form</h3>
 
@@ -202,7 +202,7 @@
                                     Are you CSCF Certified?
                                 </label>
                             </div>
-                            <label class="CSCF_number" for="inlineFormInput">CSCF Certification #:</label>
+                            <label class="sr-only" for="inlineFormInput">CSCF Certification #:</label>
                             <input type="text" class="form-control mb-2" name="CSCF_number" id="CSCF_number"
                                    placeholder="CSCF Certification # ">
                         </div>
