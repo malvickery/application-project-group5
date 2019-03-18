@@ -17,17 +17,17 @@
 
                         {{-- Show if the user is an employee --}}
                         @role("instructor")
-                            You are logged in as an Instructor
+                        You are logged in as an Instructor
                         @endrole
 
                         {{-- Show if the user is an admin --}}
                         @role("admin")
-                            You are logged in as an Admin
+                        You are logged in as an Admin
                         @endrole
 
                         {{-- Show if the user is an student --}}
                         @role("student")
-                            You are logged in as an Student
+                        You are logged in as an Student
                         @endrole
                     </div>
 
@@ -36,4 +36,37 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Email Categories",
+                    horizontalAlign: "left"
+                },
+                data: [{
+                    type: "doughnut",
+                    startAngle: 60,
+                    //innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    dataPoints: [
+                        {y: 67, label: "Inbox"},
+                        {y: 28, label: "Archives"},
+                        {y: 10, label: "Labels"},
+                        {y: 7, label: "Drafts"},
+                        {y: 15, label: "Trash"},
+                        {y: 6, label: "Spam"}
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
 @endsection

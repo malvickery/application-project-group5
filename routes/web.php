@@ -30,3 +30,6 @@ Route::get('/student-info/create', 'StudentInfoController@create');
 Route::post('/student-info', 'StudentInfoController@store');
 Route::get('/instructor-info/create', 'InstructorInfoController@create');
 Route::post('/instructor-info', 'InstructorInfoController@store');
+Route::post('/instructor-info', 'InstructorInfoController@store');
+Route::get('/contact/{id}', 'UpdateContactController@edit');
+Route::post('/contact/{id}', 'UpdateContactController@update');

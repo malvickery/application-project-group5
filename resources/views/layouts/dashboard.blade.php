@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -73,6 +75,27 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                @role('student')
+                                <a class="dropdown-item" href="/student-info/create">
+                                    New Registration
+                                </a>
+                                @endrole
+                                @role('instructor')
+                                <a class="dropdown-item" href="/instructor-info/create">
+                                    New Registration
+                                </a>
+                                @endrole
+
+                                @role('student')
+                                <a class="dropdown-item" href="/contact/{{ auth()->user()->studentInfo->contact_ID }}">
+                                    Edit Contact
+                                </a>
+                                @endrole
+                                @role('instructor')
+                                <a class="dropdown-item" href="/contact/{{ auth()->user()->instructorInfo->contact_ID }}">
+                                    Edit Contact
+                                </a>
+                                @endrole
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
@@ -90,11 +113,13 @@
         @if(Session::has('message'))
             <p class="alert alert-success text-center">{{ Session::get('message') }}</p>
         @endif
-            @if(Session::has('error'))
-                <p class="alert alert-danger text-center">{{ Session::get('error') }}</p>
-            @endif
+        @if(Session::has('error'))
+            <p class="alert alert-danger text-center">{{ Session::get('error') }}</p>
+        @endif
         @yield('content')
     </main>
 </div>
+@yield('scripts')
+
 </body>
 </html>

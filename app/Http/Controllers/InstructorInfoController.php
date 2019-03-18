@@ -40,6 +40,34 @@ class InstructorInfoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'address_line_one' => 'required',
+            'address_line_two' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'postal_code' => 'required',
+            'phone' => 'required',
+            'alt_phone' => 'required',
+            'emergency_contact' => 'required',
+            'emergency_phone' => 'required',
+            'emergency_alt_phone' => 'required',
+            'relationship' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'gender' => 'required',
+            'weight' => 'required',
+            'height_feet' => 'required',
+            'height_inch' => 'required',
+            'date_of_birth' => 'required',
+            'exp_related_to_track3' => 'required',
+            'other_experience' => 'required',
+            'special_instruction' => 'required',
+            'ski_type' => 'required',
+            'preferred_day' => 'required',
+            'alternate_day' => 'required',
+        ]);
+
         /* Create the user address entry */
         $userAddress = UserAddress::create([
             'address_line_one' => $request->get('address_line_one'),
@@ -72,7 +100,7 @@ class InstructorInfoController extends Controller
         /*Create instructor_experience entry*/
         $instructor_experience = InstructorExperience::create([
             'exp_related_to_track3' => $request->get('exp_related_to_track3'),
-            'other_experience' => $request->get('is_CSCF'),
+            'other_experience' => $request->get('other_experience'),
             'ski_type' => $request->get('ski_type'),
             'certification_ID' => $certifications->id
         ]);
