@@ -1,0 +1,228 @@
+/*Main Styling*/
+body {
+    height            : 100%;
+    background-image  : url(/img/background.png);
+    background-repeat : no-repeat;
+    background-size   : cover;
+    font-family       : 'Barlow', sans-serif;
+    min-height        : 100vh;
+}
+
+#home.jumbotron {
+    width            : 80%;
+    margin-left      : 17.5%;
+    margin-top       : 6%;
+    background-color : #111111;
+    color            : #ffffff;
+    max-height       : 275px;
+    border-radius    : .25rem;
+}
+
+#home.display-4 {
+    font-size  : 250%;
+    margin-top : -5%;
+}
+
+#home.student-numbers {
+    width   : 50%;
+    float   : left;
+    padding : 10px 10px 0px 10px;
+}
+
+#home.instructor-numbers {
+    margin-left : 50%;
+    width       : 50%;
+    padding     : 10px 10px 0px 10px;
+}
+
+#home.bottom-cards {
+    margin-left : 17.5%;
+}
+
+#home.card {
+    display          : inline-flex;
+    margin-right     : 2%;
+    background-color : #111111;
+    opacity          : .95;
+    color            : #ffffff;
+}
+
+/*Footer Styling*/
+
+.bottom-footer {
+    background-color : #111111;
+    bottom           : 0;
+    height           : 5%;
+    width            : 85%;
+    margin-left      : 15%;
+    position         : fixed;
+    opacity          : .95;
+    color            : #ffffff;
+}
+
+.bottom-footer p {
+    margin-top   : .5%;
+    float        : right;
+    margin-right : 2%;
+}
+
+/*Sidebar Styling*/
+
+.sidebar {
+    position         : fixed;
+    top              : 0;
+    width            : 12rem;
+    background-color : #111111;
+    opacity          : .90;
+    float            : left;
+    height           : 100%;
+}
+
+.sidebar img {
+    width       : 90%;
+    margin-left : 5%;
+    margin-top  : 5%;
+}
+
+.sidebar-nav {
+    margin-top : 20%;
+    display    : block;
+}
+
+.sidebar-footer {
+    bottom   : 0;
+    position : fixed;
+    width    : 15%;
+}
+
+.btn {
+    background-color : #111111;
+    margin-bottom    : 10%;
+    border           : none;
+}
+
+.btn:hover {
+    -webkit-border-radius : none;
+    -moz-border-radius    : none;
+    border-radius         : none;
+}
+
+.btn:hover {
+    border-radius : .25rem;
+}
+
+/*Icon Styling*/
+.fa-user-circle, .fa-google, .fa-google-drive, .fa-facebook-f, .fa-instagram, .fa-twitter, .fa-youtube {
+    color : #ffffff;
+}
+
+main {
+    margin-left : 14rem;
+}
+
+.navbar {
+    margin-left : 12.2rem;
+}
+
+#welcomeMsg {
+    font-size : 2rem;
+}
+
+/*!*Top Nav Styling*!*/
+/*.navbar {*/
+/*width: 85%;*/
+/*background-color: #111111;*/
+/*opacity: .8;*/
+/*position: fixed;*/
+/*margin-left: 15%;*/
+/*height: 7.5%;*/
+/*top: 0;*/
+/*}*/
+
+/*.nav-dropdown {*/
+/*position: relative;*/
+/*display: inline-block;*/
+/*}*/
+
+/*.nav-dropdown-content {*/
+/*display: none;*/
+/*position: absolute;*/
+/*color: #fff;*/
+/*background-color: #111111;*/
+/*opacity: .8;*/
+/*}*/
+
+/*.nav-dropdown-content a {*/
+/*color: #ffffff;*/
+/*}*/
+
+/*.nav-dropdown:hover .nav-dropdown-content {*/
+/*display: block;*/
+/*}*/
+
+/*.nav-bar .btn-dropdown {*/
+/*background-color: #111111;*/
+/*opacity: .8;*/
+/*border: none;*/
+/*}*/
+
+/*.navbar-text {*/
+/*margin: 0;*/
+/*color: #ffffff;*/
+/*}*/
+
+/*.dropdown {*/
+/*margin-right: 2%;*/
+/*}*/
+
+/*Sidebar Styling*/
+
+.sidebar {
+    position         : fixed;
+    top              : 0;
+    width            : 15%;
+    background-color : #111111;
+    float            : left;
+    height           : 100%;
+}
+
+.sidebar img {
+    width       : 90%;
+    margin-left : 5%;
+    margin-top  : 5%;
+}
+
+.sidebar-nav {
+    margin-top : 20%;
+    display    : block;
+}
+
+.sidebar-footer {
+    bottom   : 0;
+    position : fixed;
+    width    : 15%;
+}
+
+.btn {
+    background-color : #111111;
+    margin-bottom    : 10%;
+    border           : none;
+}
+
+.btn:hover {
+    -webkit-border-radius : none;
+    -moz-border-radius    : none;
+    border-radius         : none;
+}
+
+.btn:hover {
+    border-radius : .25rem;
+}
+
+.opacity-95 {
+    opacity : .90;
+}
+
+.bg-black {
+    background-color : #111111;
+}
