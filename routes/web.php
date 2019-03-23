@@ -35,3 +35,4 @@ Route::post('/instructor-info', 'InstructorInfoController@store');
 Route::get('/contact/{id}', 'UpdateContactController@edit');
 Route::post('/contact/{id}', 'UpdateContactController@update');
 Route::get('/calendar/create', 'CalendarController@create');
+Route::get('/admin-view/list-students', 'ViewStudentsController@index');

@@ -17,10 +17,12 @@
                             <i class="fas fa-id-card"></i> Manage Users
                         </button>
                         <div class="dropdown-menu">
-                            <a class="nav-link" href="#">Students</a>
+                            @role('admin')
+                            <a class="nav-link" href="/admin-view/list-students">Students</a>
                             <a class="nav-link" href="#">Instructors</a>
                             <a class="nav-link" href="#">Coordinators</a>
                             <a class="nav-link" href="#">Board Members</a>
+                            @endrole
                         </div>
                     </div>
                 </div>
