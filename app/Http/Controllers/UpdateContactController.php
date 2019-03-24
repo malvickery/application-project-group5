@@ -82,7 +82,7 @@ class UpdateContactController extends Controller
     public function update(Request $request, $id)
     {
 //        dd($request->get('relationship'));
-        $contact = Contact::findOrFail($id)->update([
+        $contact = Contact::where('ID', $id)->update([
             'phone' => $request->get('phone'),
             'alt_phone' => $request->get('alt_phone'),
             'emergency_contact' => $request->get('emergency_contact'),
@@ -90,7 +90,6 @@ class UpdateContactController extends Controller
             'emergency_alt_phone' => $request->get('emergency_alt_phone'),
             'relationship' => $request->post('relationship'),
         ]);
-        dd($contact);
         return redirect()->action(
             'UpdateContactController@edit', ['id' => $id]
         )->with('message', 'Contact Updated');

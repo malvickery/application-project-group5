@@ -4,7 +4,7 @@
     <div id="demo">
         <div class="card">
             <div class="card-title">
-                <h1>Material Design Responsive Table</h1>
+                <h1>View All Students</h1>
                 <h2>Table of my other Material Design works (list was updated 08.2015)</h2>
             </div>
 

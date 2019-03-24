@@ -52,13 +52,15 @@
                             @endrole
 
                             @role('student')
-                            <a class="dropdown-item" href="/contact/{{ auth()->user()->studentInfo->contact_ID }}">
+                            <a class="dropdown-item"
+                               href="/contact/{{ optional(auth()->user()->studentInfo)->contact_ID}}">
                                 Edit Contact
                             </a>
                             @endrole
                             @role('instructor')
                             <a class="dropdown-item"
-                               href="/contact/{{ auth()->user()->instructorInfo->contact_ID }}">
+                               href="/contact/{{ optional(auth()->user()->instructorInfo)->contact_ID
+                               }}">
                                 Edit Contact
                             </a>
                             @endrole
