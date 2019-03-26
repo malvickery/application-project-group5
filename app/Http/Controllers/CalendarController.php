@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Calendar;
 
 class CalendarController extends Controller
 {
@@ -36,7 +37,20 @@ class CalendarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        //return ($request->get('student_ID'));
+        $d =["msg"=>$request->get('title')];
+        
+        $event = new Calendar;
+
+        $event->title = $request->get('title');
+        $event->training_date = $request->get('date');
+        $event->time_begins = $request->get('sTime');
+        $event->time_ends = $request->get('eTime');
+
+        $event->save();
+
+        return json_encode($d);
     }
 
     /**
@@ -45,9 +59,11 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $d =["msg"=>Calendar::all()];
+
+        return json_encode($d);
     }
 
     /**
@@ -79,8 +95,10 @@ class CalendarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Calendar::where('id', $request->get('id'))->delete();
+        $d =["msg"=>"Deleted"];
+        return json_encode($d);
     }
 }

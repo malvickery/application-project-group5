@@ -213,7 +213,7 @@
 
             console.log(title);
 
-            let url = "saveEvents.php";
+            let url = "/calendar/addEvent";
 
             let data = {
                 "title": title,
@@ -225,6 +225,9 @@
 
             $.ajax({
                 type: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 url: url,
                 data: data,
                 success: function (resultData) {
@@ -246,13 +249,15 @@
 
         function getEvents() {
 
-            let url = "getEvents.php";
+            let url = "/calendar/getEvents";
             $.ajax({
                 type: "GET",
                 url: url,
                 success: function (resultData) {
 
-                    eventsData = resultData.events;
+                    console.log(resultData);
+
+                    eventsData = resultData.msg;
 
                     displayEvents();
 
@@ -301,11 +306,14 @@
                 }
 
 
-                let url = "deleteEvents.php";
+                let url = "/calendar/deleteEvent";
 
                 $.ajax({
                     type: "POST",
                     url: url,
+                    headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
                     data: data,
                     success: function (resultData) {
                         if (resultData) {

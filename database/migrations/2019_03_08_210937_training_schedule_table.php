@@ -16,10 +16,8 @@ class TrainingScheduleTable extends Migration
         DB::statement("
 CREATE TABLE `training_schedule` (
     `ID`                    int(9) NOT NULL AUTO_INCREMENT,
-    `student_ID`            int(9) NOT NULL,
-    `instructor_ID`         int(9) NOT NULL,
+    `title`                 varchar(50),
     `training_date`         DATE,
-    `training_day`          varchar(20),
     `time_begins`           varchar(20),
     `time_ends`             varchar(20),
     CONSTRAINT `Training_Schedule_PK` PRIMARY KEY (`ID`)
