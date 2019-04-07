@@ -5,7 +5,6 @@
         <div class="card">
             <div class="card-title">
                 <h1>View All Students</h1>
-                <h2>Table of my other Material Design works (list was updated 08.2015)</h2>
             </div>
 
             <!-- Responsive table starts here -->
