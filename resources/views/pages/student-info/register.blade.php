@@ -11,10 +11,10 @@
 
 
                             <div class="col-12">
-                                <div class="row">
+                                <div class="row pb-4">
                                     <div class="col-12">
                                         <h3 class="card-title">New Track Three Student Registration Form</h3>
-                                        <hr>
+                                        <hr class="pt-3">
                                     </div>
                                     <div class="col-lg-3">
                                         <h4 class="card-title pt-2">Student Information</h4>
@@ -160,105 +160,135 @@
                                     </div>
                                 </div>
                             </div>
-                            <h4 class="card-title pt-2">Address</h4>
-                            <hr>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="address_line_one">Address 1</label>
-                                    <input type="text" class="form-control" id="address_line_one"
-                                           name="address_line_one"
-                                           required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="address_line_two">Address 2</label>
-                                    <input type="text" class="form-control" id="address_line_two"
-                                           name="address_line_two"
-                                           required>
-                                </div>
+                            <div class="col-12">
+                                <hr class="pt-3">
+                                <div class="row pb-4">
 
-                                <div class="col-md-6 mb-3">
-                                    <label for="city">City</label>
-                                    <input type="text" class="form-control" id="city" name="city" placeholder="City"
-                                           required>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="province">Province</label>
-                                    <input type="text" class="form-control" id="province" name="province"
-                                           placeholder="Province"
-                                           required>
-                                </div>
+                                    <div class="col-lg-3">
+                                        <h4 class="card-title pt-2">Address</h4>
 
-                                <div class="col-md-3 mb-3">
-                                    <label for="postal_code">Postal Code</label>
-                                    <input type="text" class="form-control" id="postal_code" name="postal_code"
-                                           placeholder="XXX XXX"
-                                           required>
+                                        <span>Having up to date address information ensures you are able to receive any updates and important information by mail</span>
+                                    </div>
+                                    <div class="col-lg-9">
+
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="address_line_one">Address 1</label>
+                                                <input type="text" class="form-control" id="address_line_one"
+                                                       name="address_line_one"
+                                                       required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="address_line_two">Address 2</label>
+                                                <input type="text" class="form-control" id="address_line_two"
+                                                       name="address_line_two"
+                                                       required>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="city">City</label>
+                                                <input type="text" class="form-control" id="city" name="city"
+                                                       placeholder="City"
+                                                       required>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="province">Province</label>
+                                                <input type="text" class="form-control" id="province" name="province"
+                                                       placeholder="Province"
+                                                       required>
+                                            </div>
+
+                                            <div class="col-md-3 mb-3">
+                                                <label for="postal_code">Postal Code</label>
+                                                <input type="text" class="form-control" id="postal_code"
+                                                       name="postal_code"
+                                                       placeholder="XXX XXX"
+                                                       required>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="col-12">
+                                <hr class="pt-3">
+                                <div class="row pb-4">
 
-                            <h4 class="card-title pt-2">Contact Information</h4>
-                            <span>This information will not be shared with any persons outside if the Track3 Ski program.</span>
-                            <hr>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="number" class="form-control" id="phone" name="phone"
-                                           placeholder="(xxx) xxx-xxxx"
-                                           required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="alt_phone">Alt Phone Number</label>
-                                    <input type="number" class="form-control" id="alt_phone" name="alt_phone"
-                                           placeholder="(xxx) xxx-xxxx"
-                                           required>
-                                </div>
+                                    <div class="col-lg-3">
+                                        <h4 class="card-title pt-2">Contact Information</h4>
+                                        <span>This information will not be shared with any persons outside if the Track3 Ski program.</span>
+                                    </div>
 
-                                <div class="col-md-6 mb-3">
-                                    <label for="emergency_contact">Emergency Contact</label>
-                                    <input type="text" class="form-control" id="emergency_contact"
-                                           name="emergency_contact"
-                                           placeholder=""
-                                           required>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="relationship">Relationship</label>
-                                    <input type="text" class="form-control" id="relationship" name="relationship"
-                                           placeholder="ie. Mother"
-                                           required>
-                                </div>
+                                    <div class="col-lg-9">
 
-                                <div class="col-md-6 mb-3">
-                                    <label for="emergency_phone">Emergency Contact Phone Number</label>
-                                    <input type="number" class="form-control" id="emergency_phone"
-                                           name="emergency_phone"
-                                           placeholder="(xxx) xxx-xxxx"
-                                           required>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="phone">Phone Number</label>
+                                                <input type="number" class="form-control" id="phone" name="phone"
+                                                       placeholder="(xxx) xxx-xxxx"
+                                                       required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="alt_phone">Alt Phone Number</label>
+                                                <input type="number" class="form-control" id="alt_phone"
+                                                       name="alt_phone"
+                                                       placeholder="(xxx) xxx-xxxx"
+                                                       required>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="emergency_contact">Emergency Contact</label>
+                                                <input type="text" class="form-control" id="emergency_contact"
+                                                       name="emergency_contact"
+                                                       placeholder=""
+                                                       required>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="relationship">Relationship</label>
+                                                <input type="text" class="form-control" id="relationship"
+                                                       name="relationship"
+                                                       placeholder="ie. Mother"
+                                                       required>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="emergency_phone">Emergency Contact Phone Number</label>
+                                                <input type="number" class="form-control" id="emergency_phone"
+                                                       name="emergency_phone"
+                                                       placeholder="(xxx) xxx-xxxx"
+                                                       required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="emergency_alt_phone">Emergency Contact Alt Phone
+                                                    Number</label>
+                                                <input type="number" class="form-control" id="emergency_alt_phone"
+                                                       name="emergency_alt_phone" placeholder="(xxx) xxx-xxxx"
+                                                       required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="photo_release"
+                                                       value="true"
+                                                       name="photo_release">
+                                                <label class="form-check-label" for="photo_release">
+                                                    Do you agree to a photo release?
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-danger" type="submit">Submit form</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="emergency_alt_phone">Emergency Contact Alt Phone Number</label>
-                                    <input type="number" class="form-control" id="emergency_alt_phone"
-                                           name="emergency_alt_phone" placeholder="(xxx) xxx-xxxx"
-                                           required>
-                                </div>
+                                <hr>
                             </div>
-
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="photo_release" value="true"
-                                           name="photo_release">
-                                    <label class="form-check-label" for="photo_release">
-                                        Do you agree to a photo release?
-                                    </label>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" type="submit">Submit form</button>
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
+        <hr>
     </div>
+
 
 @endsection
