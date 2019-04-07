@@ -9,7 +9,6 @@
                         <form action="/student-info" method="post">
                             @csrf
 
-
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12">
