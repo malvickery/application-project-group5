@@ -22,7 +22,7 @@
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
                                                         <div class="progress-bar" id="ski"  role="progressbar"
-                                                             
+                                                        style="width: 75%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="20"
                                                              aria-valuemin="0" aria-valuemax="120">100
                                                         </div>
@@ -173,8 +173,10 @@
                 if(resultData){
                     eventsData = resultData.cal;
                     studentData = resultData.students;
+                    instructorData = resultData.instructors;
                     randerEvents();
                     randerStudents();
+                    renderInstructors();
                 }
                 
 
@@ -220,12 +222,12 @@
                 $("#ski").text(skiingCount);
 
             }
-            else if(studentData[i].ski_type == "Snowbording"){
+            else if(studentData[i].ski_type == "snow-board"){
                 snowbordCount++
                 $("#snow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
                 $("#snow").text(snowbordCount);
             }
-            else if(studentData[i].ski_type == "Sit Skiing"){
+            else if(studentData[i].ski_type == "sit-ski"){
                 sitSkiingCount++
                 $("#sit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
                 $("#sit").text(sitSkiingCount);
@@ -239,19 +241,19 @@
         var snowbordCount = 0;
         var sitSkiingCount = 0;
 
-        for (let i = 0; i < studentData.length; i++) {
-            if (studentData[i].ski_type == "ski"){
+        for (let i = 0; i < instructorData.length; i++) {
+            if (instructorData[i].ski_type == "ski"){
                 skiingCount++
                 $("#insSit").attr("style","background-color: #c32b32;width: calc("+skiingCount+"/100),margin-left:0");
                 $("#insSit").text(skiingCount);
 
             }
-            else if(studentData[i].ski_type == "Snowbording"){
+            else if(instructorData[i].ski_type == "snow-board"){
                 snowbordCount++
                 $("#insSnow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
                 $("#insSnow").text(snowbordCount);
             }
-            else if(studentData[i].ski_type == "Sit Skiing"){
+            else if(instructorData[i].ski_type == "sit-ski"){
                 sitSkiingCount++
                 $("#insSit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
                 $("#insSit").text(sitSkiingCount);
