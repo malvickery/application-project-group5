@@ -9,7 +9,6 @@
                         <form action="/student-info" method="post">
                             @csrf
 
-
                             <div class="col-12">
                                 <div class="row pb-4">
                                     <div class="col-12">
@@ -290,5 +289,9 @@
         <hr>
     </div>
 
+<<<<<<< HEAD
 
 @endsection
+=======
+@endsection
+>>>>>>> develop

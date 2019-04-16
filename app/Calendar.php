@@ -8,6 +8,6 @@ class Calendar extends Model
 {
     protected $table = 'training_schedule';
     protected $guarded = [];
-    protected $fillable = ['title','training_date','time_begins','time_ends'];
+    protected $fillable = ['title','training_date','time_begins','time_ends','color'];
     public $timestamps = false;
 }

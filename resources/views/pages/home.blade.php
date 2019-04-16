@@ -137,15 +137,15 @@
                     <div class="card shadow-lg flex-1 bg-black text-white opacity-95">
                         <div class="card-body">
                             <h3 class="card-title font-weight-bold">Upcoming Events</h3>
-                            <ol>
-                                <li class="text-red-lighter font-bold text-xl">March, 19th, 2019</li>
+                            <ol id="eventList">
+                                <!-- <li class="text-red-lighter font-bold text-xl">March, 19th, 2019</li>
                                 <p>Lorem ipsum dolor sit amet, elit. A accusantium, ad commodi.
                                 </p>
                                 <li class="text-red-lighter font-bold text-xl">March, 19th, 2019</li>
                                 <p> temporibus tenetur veniam? Atque dolore quidem tempore.</p>
                                 <li class="text-red-lighter font-bold text-xl">March, 19th, 2019</li>
                                 <p> delectus ex fugit itaque laudantium minus, molestias mollitia quis quos
-                                    recusandae</p>
+                                    recusandae</p> -->
                             </ol>
                         </div>
                     </div>
@@ -153,6 +153,55 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+    var months     = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var eventsData;
+
+    getEvents();
+    console.log("here");
+    function getEvents() {
+
+        let url = "/home/getEvents";
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (resultData) {
+                eventsData = resultData.msg;
+                randerEvents();
+
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+                console.log(textStatus);
+                console.log(jXHR);
+
+            },
+            dataType: "JSON"
+        });
+    }
+
+    function randerEvents(){
+
+        var currentDate = new Date();
+
+        for (let i = 0; i < eventsData.length; i++) {
+
+            var savedDate = new Date(eventsData[i].training_date);
+
+            if (currentDate.getMonth() <= savedDate.getMonth(eventsData[i].training_date) && currentDate.getDate() <= savedDate.getDate(eventsData[i].training_date)  ){
+                $("#eventList").append(
+                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+`, `+savedDate.getDate(eventsData[i].training_date)+`, `+savedDate.getFullYear(eventsData[i].training_date)+`</li>
+                    <p> `+eventsData[i].title+`</p>`)
+            }
+
+
+        }
+    }
+
+    </script>   
 @endsection
 
 @section('scripts')

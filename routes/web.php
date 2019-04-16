@@ -22,6 +22,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/getEvents', 'HomeController@show');
 Route::get('/profile', 'ProfileController@index')->name('profile');
 
 //Route::get('/student/create', 'StudentController@create')->name('student');

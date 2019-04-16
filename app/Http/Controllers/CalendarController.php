@@ -47,6 +47,7 @@ class CalendarController extends Controller
         $event->training_date = $request->get('date');
         $event->time_begins = $request->get('sTime');
         $event->time_ends = $request->get('eTime');
+        $event->color = $request->get('color');
 
         $event->save();
 
