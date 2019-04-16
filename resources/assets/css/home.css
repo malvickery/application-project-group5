@@ -1,3 +1,9 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
 /*Main Styling*/
 body {
     height: 100%;
@@ -124,11 +130,6 @@ main {
     margin-left: 14rem;
 }
 
-.navbar {
-    margin-left: 12rem;
-    height: 3rem;
-}
-
 #welcomeMsg {
     font-size: 2rem;
 }
@@ -246,4 +247,12 @@ main {
 
 .navbar {
     z-index: 100;
+    position: fixed;
+    width: 85%;
+    margin-left: 15%;
+    height: 3rem;
 }
+
+
+
+
