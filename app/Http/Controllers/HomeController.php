@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Calendar;
 use App\StudentInfo;
+use App\InstructorInfo;
+use App\DashboardInputs;
 
 class HomeController extends Controller
 {
@@ -30,7 +32,7 @@ class HomeController extends Controller
 
     public function show()
     {
-        $d =["cal"=>Calendar::all(), "students"=>StudentInfo::all()];
+        $d =["cal"=>Calendar::all(), "students"=>StudentInfo::all(), "instructors"=>InstructorInfo::all(),"announcements"=>DashboardInputs::all()];
 
         return json_encode($d);
     }

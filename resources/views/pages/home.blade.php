@@ -21,8 +21,8 @@
                                                 <td style="width:25%;">Skiers</td>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" id="ski"  role="progressbar"
-                                                             
+                                                        <div class="progress-bar" id="ski" role="progressbar"
+                                                             style="width: 75%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="20"
                                                              aria-valuemin="0" aria-valuemax="120">100
                                                         </div>
@@ -116,8 +116,8 @@
                     <div class="card flex-1 shadow bg-black opacity-95 text-white">
                         <div class="card-body">
                             <h3 class="card-title font-weight-bold">Announcements</h3>
-                            <p class="">March, 19th, 2019</p>
-                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet animi dolor, eaque fugiat hic illum iste laborum magnam, minima minus molestias non perspiciatis temporibus vel vero voluptatem voluptatum.</span>
+                            <p class="" id="an_date">March, 19th, 2019</p>
+                            <p class="card-text" id="an_content"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet animi dolor, eaque fugiat hic illum iste laborum magnam, minima minus molestias non perspiciatis temporibus vel vero voluptatem voluptatum.</span>
                             </p>
                         </div>
                     </div>
@@ -156,111 +156,124 @@
 
     <script>
 
-    var months     = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var eventsData;
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var eventsData;
 
-    var studentData;
+        var studentData;
 
-    getEvents();
-    function getEvents() {
+        getEvents();
 
-        let url = "/home/getEvents";
-        $.ajax({
-            type: "GET",
-            url: url,
-            success: function (resultData) {
+        function getEvents() {
 
-                if(resultData){
-                    eventsData = resultData.cal;
-                    studentData = resultData.students;
-                    randerEvents();
-                    randerStudents();
+            let url = "/home/getEvents";
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function (resultData) {
+
+                    if (resultData) {
+                        eventsData       = resultData.cal;
+                        studentData      = resultData.students;
+                        instructorData   = resultData.instructors;
+                        announcementData = resultData.announcements;
+                        randerEvents();
+                        randerStudents();
+                        renderInstructors();
+                        announcementShow();
+                    }
+
+
+                },
+                error: function (jXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                    console.log(textStatus);
+                    console.log(jXHR);
+
+                },
+                dataType: "JSON"
+            });
+        }
+
+        function announcementShow() {
+            for (let i = 0; i < announcementData.length; i++) {
+                $("#an_date").text(announcementData[i].announcement_date);
+                $("#an_content").text(announcementData[i].announcement_desc);
+            }
+        }
+
+        function randerEvents() {
+
+            var currentDate = new Date();
+
+            for (let i = 0; i < eventsData.length; i++) {
+
+                var savedDate = new Date(eventsData[i].training_date);
+
+                if (currentDate.getMonth() <= savedDate.getMonth(eventsData[i].training_date) && currentDate.getDate() <= savedDate.getDate(eventsData[i].training_date)) {
+                    $("#eventList").append(
+                        `<li class="text-red-lighter font-bold text-xl">` + months[savedDate.getMonth(eventsData[i].training_date)] + `, ` + (eventsData[i].training_date
+                        ).substring(8, 10) + ` , ` + savedDate.getFullYear(eventsData[i].training_date) + `</li>
+                    <p> ` + eventsData[i].title + `</p>`)
                 }
-                
-
-            },
-            error: function (jXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
-                console.log(textStatus);
-                console.log(jXHR);
-
-            },
-            dataType: "JSON"
-        });
-    }
-
-    function randerEvents(){
-
-        var currentDate = new Date();
-
-        for (let i = 0; i < eventsData.length; i++) {
-
-            var savedDate = new Date(eventsData[i].training_date);
-
-            if (currentDate.getMonth() <= savedDate.getMonth(eventsData[i].training_date) && currentDate.getDate() <= savedDate.getDate(eventsData[i].training_date)  ){
-                $("#eventList").append(
-                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+`, `+ (eventsData[i].training_date).substring(8,10)+` , `+ savedDate.getFullYear(eventsData[i].training_date)+`</li>
-                    <p> `+eventsData[i].title+`</p>`)
-            }
 
 
-        }
-    }
-
-    function randerStudents(){
-
-        var skiingCount = 0;
-        var snowbordCount = 0;
-        var sitSkiingCount = 0;
-
-        for (let i = 0; i < studentData.length; i++) {
-            if (studentData[i].ski_type == "ski"){
-                skiingCount++
-                $("#ski").attr("style","background-color: #c32b32;width: calc("+skiingCount+"/100),margin-left:0");
-                $("#ski").text(skiingCount);
-
-            }
-            else if(studentData[i].ski_type == "Snowbording"){
-                snowbordCount++
-                $("#snow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
-                $("#snow").text(snowbordCount);
-            }
-            else if(studentData[i].ski_type == "Sit Skiing"){
-                sitSkiingCount++
-                $("#sit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
-                $("#sit").text(sitSkiingCount);
             }
         }
 
-    }
+        function randerStudents() {
 
-    function renderInstructors(){
-        var skiingCount = 0;
-        var snowbordCount = 0;
-        var sitSkiingCount = 0;
+            var skiingCount    = 0;
+            var snowbordCount  = 0;
+            var sitSkiingCount = 0;
 
-        for (let i = 0; i < studentData.length; i++) {
-            if (studentData[i].ski_type == "ski"){
-                skiingCount++
-                $("#insSit").attr("style","background-color: #c32b32;width: calc("+skiingCount+"/100),margin-left:0");
-                $("#insSit").text(skiingCount);
+            for (let i = 0; i < studentData.length; i++) {
+                if (studentData[i].ski_type == "ski") {
+                    skiingCount++
+                    $("#ski").attr("style", "background-color: #c32b32;width: calc(" + skiingCount + "/100),margin-left:0");
+                    $("#ski").text(skiingCount);
 
+                }
+                else if (studentData[i].ski_type == "snow-board") {
+                    snowbordCount++
+                    $("#snow").attr("style", "background-color: #c32b32;width: calc(" + snowbordCount + "/100),margin-left:0");
+                    $("#snow").text(snowbordCount);
+                }
+                else if (studentData[i].ski_type == "sit-ski") {
+                    sitSkiingCount++
+                    $("#sit").attr("style", "background-color: #c32b32;width: calc(" + sitSkiingCount + "/100),margin-left:0");
+                    $("#sit").text(sitSkiingCount);
+                }
             }
-            else if(studentData[i].ski_type == "Snowbording"){
-                snowbordCount++
-                $("#insSnow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
-                $("#insSnow").text(snowbordCount);
-            }
-            else if(studentData[i].ski_type == "Sit Skiing"){
-                sitSkiingCount++
-                $("#insSit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
-                $("#insSit").text(sitSkiingCount);
-            }
+
         }
 
-    }
+        function renderInstructors() {
+            var skiingCount    = 0;
+            var snowbordCount  = 0;
+            var sitSkiingCount = 0;
 
-    </script>   
+            for (let i = 0; i < instructorData.length; i++) {
+                if (instructorData[i].ski_type == "ski") {
+                    skiingCount++
+                    $("#insSit").attr("style", "background-color: #c32b32;width: calc(" + skiingCount + "/100),margin-left:0");
+                    $("#insSit").text(skiingCount);
+
+                }
+                else if (instructorData[i].ski_type == "snow-board") {
+                    snowbordCount++
+                    $("#insSnow").attr("style", "background-color: #c32b32;width: calc(" + snowbordCount + "/100),margin-left:0");
+                    $("#insSnow").text(snowbordCount);
+                }
+                else if (instructorData[i].ski_type == "sit-ski") {
+                    sitSkiingCount++
+                    $("#insSit").attr("style", "background-color: #c32b32;width: calc(" + sitSkiingCount + "/100),margin-left:0");
+                    $("#insSit").text(sitSkiingCount);
+                }
+            }
+
+        }
+
+    </script>
 @endsection
 
 @section('scripts')
