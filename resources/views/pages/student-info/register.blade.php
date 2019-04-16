@@ -288,10 +288,5 @@
         </div>
         <hr>
     </div>
-
-<<<<<<< HEAD
-
 @endsection
-=======
-@endsection
->>>>>>> develop
+
