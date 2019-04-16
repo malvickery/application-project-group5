@@ -20,6 +20,7 @@ CREATE TABLE `training_schedule` (
     `training_date`         DATE,
     `time_begins`           varchar(20),
     `time_ends`             varchar(20),
+    `color`                 varchar(10),
     CONSTRAINT `Training_Schedule_PK` PRIMARY KEY (`ID`)
 );
 ");
