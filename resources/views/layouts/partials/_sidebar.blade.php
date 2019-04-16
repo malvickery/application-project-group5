@@ -20,8 +20,7 @@
                             @role('admin')
                             <a class="nav-link" href="/admin-view/list-students">Students</a>
                             <a class="nav-link" href="admin-view/list-instructors">Instructors</a>
-                            <a class="nav-link" href="#">Coordinators</a>
-                            <a class="nav-link" href="#">Board Members</a>
+                            <a class="nav-link" href="/dashboard/view">Edit Dashboard</a>
                             @endrole
                         </div>
                     </div>

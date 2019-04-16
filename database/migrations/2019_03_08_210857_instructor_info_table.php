@@ -31,6 +31,8 @@ CREATE TABLE `instructor_info` (
     `preferred_day`         varchar(30),
     `alternate_day`        varchar(30),   
     `experience_ID`         int(9) NOT NULL,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+
     CONSTRAINT `Instructor_PK` PRIMARY KEY (`instructor_ID`),
     CONSTRAINT `Instructor_User_FK` FOREIGN KEY (user_ID) REFERENCES `users` (`id`),
     CONSTRAINT Instructor_Email_UK UNIQUE (`email`),
