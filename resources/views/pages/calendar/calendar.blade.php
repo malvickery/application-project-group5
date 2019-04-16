@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card" id="mainCard" style="background-color: black; padding:10px">
+    <div class="card mt-10" id="mainCard" style="background-color: black; padding:10px">
         <div class="row ">
             <div class="col-md-8 ">
                 <h3 class="card-header text-light" id="monthAndYear"></h3>

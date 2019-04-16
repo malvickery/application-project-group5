@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid d-flex justify-content-center mt-10">
         <div class="card">
             <div class="card-body">
                 <form action="/contact/{{ $contact->ID  }}" method="post">

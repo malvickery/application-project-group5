@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
-                        <i class="fas fa-bullhorn"></i> Register
+                        <i class="fas fa-bullhorn"></i> Announcements
                     </a>
                 </div>
                 <div>
