@@ -22,7 +22,7 @@
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
                                                         <div class="progress-bar" id="ski" role="progressbar"
-                                                             style="width: 75%;background-color: #c32b32;margin-left:0;"
+                                                             style="background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="20"
                                                              aria-valuemin="0" aria-valuemax="120">100
                                                         </div>
