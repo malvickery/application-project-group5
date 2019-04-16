@@ -1,131 +1,136 @@
 /*Main Styling*/
 body {
-    height            : 100%;
-    background-image  : url(/img/background.png);
-    background-repeat : no-repeat;
-    background-size   : cover;
-    font-family       : 'Barlow', sans-serif;
-    min-height        : 100vh;
+    height: 100%;
+    background-image: url(/img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+}
+
+.mt-32 {
+    margin-top: 1%;
 }
 
 #home.jumbotron {
-    width            : 80%;
-    margin-left      : 17.5%;
-    margin-top       : 6%;
-    background-color : #111111;
-    color            : #ffffff;
-    max-height       : 275px;
-    border-radius    : .25rem;
+    width: 80%;
+    margin-left: 17.5%;
+    margin-top: 6%;
+    background-color: #111111;
+    color: #ffffff;
+    max-height: 275px;
+    border-radius: .25rem;
 }
 
 #home.display-4 {
-    font-size  : 250%;
-    margin-top : -5%;
+    font-size: 250%;
+    margin-top: -5%;
 }
 
 #home.student-numbers {
-    width   : 50%;
-    float   : left;
-    padding : 10px 10px 0px 10px;
+    width: 50%;
+    float: left;
+    padding: 10px 10px 0px 10px;
 }
 
 #home.instructor-numbers {
-    margin-left : 50%;
-    width       : 50%;
-    padding     : 10px 10px 0px 10px;
+    margin-left: 50%;
+    width: 50%;
+    padding: 10px 10px 0px 10px;
 }
 
 #home.bottom-cards {
-    margin-left : 17.5%;
+    margin-left: 17.5%;
 }
 
 #home.card {
-    display          : inline-flex;
-    margin-right     : 2%;
-    background-color : #111111;
-    opacity          : .95;
-    color            : #ffffff;
+    display: inline-flex;
+    margin-right: 2%;
+    background-color: #111111;
+    opacity: .95;
+    color: #ffffff;
 }
 
 /*Footer Styling*/
 
 .bottom-footer {
-    background-color : #111111;
-    bottom           : 0;
-    height           : 5%;
-    width            : 85%;
-    margin-left      : 15%;
-    position         : fixed;
-    opacity          : .95;
-    color            : #ffffff;
+    background-color: #111111;
+    bottom: 0;
+    height: 5%;
+    width: 85%;
+    margin-left: 15%;
+    position: fixed;
+    opacity: .95;
+    color: #ffffff;
 }
 
 .bottom-footer p {
-    margin-top   : .5%;
-    float        : right;
-    margin-right : 2%;
+    margin-top: .5%;
+    float: right;
+    margin-right: 2%;
 }
 
 /*Sidebar Styling*/
 
 .sidebar {
-    position         : fixed;
-    top              : 0;
-    width            : 12rem;
-    background-color : #111111;
-    opacity          : .90;
-    float            : left;
-    height           : 100%;
+    position: fixed;
+    top: 0;
+    width: 12rem;
+    background-color: #111111;
+    opacity: .90;
+    float: left;
+    height: 100%;
 }
 
 .sidebar img {
-    width       : 90%;
-    margin-left : 5%;
-    margin-top  : 5%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 .sidebar-nav {
-    margin-top : 20%;
-    display    : block;
+    margin-top: 20%;
+    display: block;
 }
 
 .sidebar-footer {
-    bottom   : 0;
-    position : fixed;
-    width    : 15%;
+    bottom: 0;
+    position: fixed;
+    width: 15%;
 }
 
 .btn {
-    background-color : #111111;
-    margin-bottom    : 10%;
-    border           : none;
+    background-color: #111111;
+    margin-bottom: 10%;
+    border: none;
 }
 
 .btn:hover {
-    -webkit-border-radius : none;
-    -moz-border-radius    : none;
-    border-radius         : none;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    border-radius: none;
 }
 
 .btn:hover {
-    border-radius : .25rem;
+    border-radius: .25rem;
 }
 
 /*Icon Styling*/
 .fa-user-circle, .fa-google, .fa-google-drive, .fa-facebook-f, .fa-instagram, .fa-twitter, .fa-youtube {
-    color : #ffffff;
+    color: #ffffff;
 }
 
 main {
-    margin-left : 14rem;
+    margin-left: 14rem;
 }
 
 .navbar {
-    margin-left : 12.2rem;
+    margin-left: 12rem;
+    height: 3rem;
 }
 
 #welcomeMsg {
-    font-size : 2rem;
+    font-size: 2rem;
 }
 
 /*!*Top Nav Styling*!*/
@@ -178,51 +183,56 @@ main {
 /*Sidebar Styling*/
 
 .sidebar {
-    position         : fixed;
-    top              : 0;
-    width            : 15%;
-    background-color : #111111;
-    float            : left;
-    height           : 100%;
+    position: fixed;
+    top: 0;
+    width: 15%;
+    background-color: #111111;
+    float: left;
+    height: 100%;
 }
 
 .sidebar img {
-    width       : 90%;
-    margin-left : 5%;
-    margin-top  : 5%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 .sidebar-nav {
-    margin-top : 20%;
-    display    : block;
+    margin-top: 20%;
+    display: block;
 }
 
 .sidebar-footer {
-    bottom   : 0;
-    position : fixed;
-    width    : 15%;
+    bottom: 0;
+    position: fixed;
+    width: 15%;
 }
 
 .btn {
-    background-color : #111111;
-    margin-bottom    : 10%;
-    border           : none;
+    background-color: #111111;
+    margin-bottom: 10%;
+    border: none;
 }
 
 .btn:hover {
-    -webkit-border-radius : none;
-    -moz-border-radius    : none;
-    border-radius         : none;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    border-radius: none;
 }
 
 .btn:hover {
-    border-radius : .25rem;
+    border-radius: .25rem;
 }
 
 .opacity-95 {
-    opacity : .90;
+    opacity: .90;
 }
 
 .bg-black {
-    background-color : #111111;
+    background-color: #111111;
+}
+
+#quoteDisplay {
+    width: 75%;
+    height: 75%;
 }

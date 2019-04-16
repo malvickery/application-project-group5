@@ -125,11 +125,10 @@
                     <div class="card shadow mx-2 flex-1 bg-black opacity-95 text-white">
                         <div class="card-body">
                             <h3 class="card-title font-weight-bold">Inspiration</h3>
-                            <blockquote class="card-text blockquote"><i class="fas fa-quote-left text-red text-3xl"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ex
-                                facilis incidunt libero magni nesciunt numquam perferendis placeat quaerat quia, quos
-                                ratione recusandae rem repellat sit ullam ut veritatis. <i
-                                        class="fas fa-quote-right text-red text-3xl"></i>
+                            <blockquote class="card-text blockquote">
+                                <i class="fas fa-quote-left text-red text-3xl"></i>
+                                <div id="quoteDisplay"></div>
+                                <i class="fas fa-quote-right text-red text-3xl"></i>
                             </blockquote>
                         </div>
                     </div>
