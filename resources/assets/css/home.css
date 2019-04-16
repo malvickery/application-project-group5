@@ -232,7 +232,15 @@ main {
     background-color: #111111;
 }
 
-#quoteDisplay {
-    width: 75%;
-    height: 75%;
+.fa-quote-right {
+    float: right;
 }
+
+#quoteDisplay {
+    width: 10rem;
+    height: 10rem;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
