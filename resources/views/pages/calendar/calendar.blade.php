@@ -142,7 +142,7 @@
 
             var tbl = document.getElementById("cal");
 
-            
+            tbl.innerHTML = "";
 
             monthAndYear.innerHTML = months[month] + " " + year;
 
