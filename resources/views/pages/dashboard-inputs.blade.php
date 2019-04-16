@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div id="demo">
+    <div id="demo" class="mt-10">
         <div class="card">
             <div class="card-title">
                 <h1>Update Dashboard</h1>
