@@ -8,11 +8,6 @@ body {
     min-height: 100vh;
 }
 
-.mt-32, #mainCard {
-    margin-top: 4rem;
-    margin-left: -1rem;
-}
-
 .nav-item {
     list-style-type: none;
 }
@@ -252,5 +247,4 @@ main {
 .navbar {
     z-index: 100;
     position: fixed;
-    width: 68rem;
 }
