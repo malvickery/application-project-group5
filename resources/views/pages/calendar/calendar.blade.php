@@ -301,7 +301,7 @@
         }
 
 
-        function displayEvents() {
+        function displayEvents(){
             document.getElementById("eventCard").innerHTML = " ";
 
             for (let i = 0; i < eventsData.length; i++) {
