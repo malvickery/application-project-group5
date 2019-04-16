@@ -40,33 +40,31 @@ class InstructorInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'address_line_one' => 'required',
-            'address_line_two' => 'required',
-            'city' => 'required',
-            'province' => 'required',
-            'postal_code' => 'required',
-            'phone' => 'required',
-            'alt_phone' => 'required',
-            'emergency_contact' => 'required',
-            'emergency_phone' => 'required',
-            'emergency_alt_phone' => 'required',
-            'relationship' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'gender' => 'required',
-            'weight' => 'required',
-            'height_feet' => 'required',
-            'height_inch' => 'required',
-            'date_of_birth' => 'required',
-            'exp_related_to_track3' => 'required',
-            'other_experience' => 'required',
-            'special_instruction' => 'required',
-            'ski_type' => 'required',
-            'preferred_day' => 'required',
-            'alternate_day' => 'required',
-        ]);
+        //todo: fix this validation issue
+//        $request->validate([
+//            'address_line_one' => 'required',
+//            'city' => 'required',
+//            'province' => 'required',
+//            'postal_code' => 'required',
+//            'phone' => 'required',
+//            'emergency_contact' => 'required',
+//            'emergency_phone' => 'required',
+//            'relationship' => 'required',
+//            'first_name' => 'required',
+//            'last_name' => 'required',
+//            'email' => 'required',
+//            'gender' => 'required',
+//            'weight' => 'required',
+//            'height_feet' => 'required',
+//            'height_inch' => 'required',
+//            'date_of_birth' => 'required',
+//            'exp_related_to_track3' => 'required',
+//            'other_experience' => 'required',
+//            'special_instruction' => 'required',
+//            'ski_type' => 'required',
+//            'preferred_day' => 'required',
+//            'alternate_day' => 'required',
+//        ]);
 
         /* Create the user address entry */
         $userAddress = UserAddress::create([

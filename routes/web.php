@@ -32,7 +32,6 @@ Route::post('/student-info', 'StudentInfoController@store');
 
 Route::get('/instructor-info/create', 'InstructorInfoController@create');
 Route::post('/instructor-info', 'InstructorInfoController@store');
-Route::post('/instructor-info', 'InstructorInfoController@store');
 
 Route::get('/contact/{id}', 'UpdateContactController@edit');
 Route::post('/contact/{id}', 'UpdateContactController@update');
@@ -43,3 +42,7 @@ Route::get('/calendar/getEvents', 'CalendarController@show');
 Route::post('/calendar/deleteEvent', 'CalendarController@destroy');
 
 Route::get('/admin-view/list-students', 'ViewStudentsController@index');
+Route::get('/admin-view/list-instructors', 'InstructorViewController@index');
+
+Route::post('/delete/student','ViewStudentsController@destroy');
+Route::post('/delete/instructor','InstructorViewController@destroy');

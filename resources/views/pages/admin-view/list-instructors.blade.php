@@ -4,7 +4,7 @@
     <div id="demo">
         <div class="card">
             <div class="card-title">
-                <h1>View All Students</h1>
+                <h1>View All Instructors</h1>
             </div>
 
             <!-- Responsive table starts here -->
@@ -16,20 +16,20 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Student Name</th>
+                            <th>Instructor Name</th>
                             <th>Ski Type</th>
                             <th>Photo Consent?</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($students as $student)
+                        @foreach ($instructors as $instructor)
                             <tr>
-                                <td data-title="ID">{{$student->student_ID}}</td>
-                                <td data-title="Name">{{$student->first_name }} {{$student->last_name}}</td>
-                                <td data-title="Ski_Type">{{$student->ski_type}}</td>
-                                <td data-title="Status">{{$student->photo_release}}</td>
+                                <td data-title="ID">{{$instructor->student_ID}}</td>
+                                <td data-title="Name">{{$instructor->first_name }} {{$instructor->last_name}}</td>
+                                <td data-title="Ski_Type">{{$instructor->ski_type}}</td>
+                                <td data-title="Status">{{$instructor->photo_release}}</td>
                                 <td>
-                                    <button class="btn btn-danger" onclick="deleteStudent({{ $student->student_ID }});">Delete</button>
+                                    <button class="btn btn-danger" onclick="deleteInstructor({{ $instructor->instructor_ID }});">Delete</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -43,14 +43,14 @@
     <script>
 
 
-        function deleteStudent(id)
+        function deleteInstructor(id)
         {
             console.log("hi");
             var data = {
                 "id": id
             };
 
-            var url = "/delete/student";
+            var url = "/delete/instructor";
             $.ajax({
                 type: "POST",
                 url: url,
@@ -60,7 +60,7 @@
                 data: data,
                 success: function (resultData) {
                     if (resultData) {
-                        location.href = "../../admin-view/list-students"                    }
+                        location.href = "../../admin-view/list-instructors"                    }
                 },
                 error: function (jXHR, textStatus, errorThrown) {
                     console.log(errorThrown);

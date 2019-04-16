@@ -40,6 +40,8 @@ CREATE TABLE `student_info` (
     `years_in_program`       int(9),
     `waiver`                varchar(9),
     `paid`                  varchar(9),
+      `deleted_at` timestamp NULL DEFAULT NULL,
+
     CONSTRAINT `Student_PK` PRIMARY KEY (`student_ID`),
     CONSTRAINT `Student_Email_UK` UNIQUE (`email`),
     CONSTRAINT `Student_User_FK` FOREIGN KEY (`user_ID`) REFERENCES `users` (`id`),
