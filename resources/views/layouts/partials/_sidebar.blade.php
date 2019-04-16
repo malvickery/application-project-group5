@@ -19,7 +19,7 @@
                         <div class="dropdown-menu">
                             @role('admin')
                             <a class="nav-link" href="/admin-view/list-students">Students</a>
-                            <a class="nav-link" href="#">Instructors</a>
+                            <a class="nav-link" href="admin-view/list-instructors">Instructors</a>
                             <a class="nav-link" href="#">Coordinators</a>
                             <a class="nav-link" href="#">Board Members</a>
                             @endrole

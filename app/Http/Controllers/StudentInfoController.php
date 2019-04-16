@@ -164,6 +164,6 @@ class StudentInfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }
