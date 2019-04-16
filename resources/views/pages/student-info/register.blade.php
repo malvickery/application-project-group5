@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center bg-grey-lighter">
+    <div class="container-fluid d-flex justify-content-center bg-grey-lighter mt-10">
         <div class="col-12">
             <div class="row">
-                <div class="card bg-grey-lighter ">
+                <div class="card bg-grey-lighter">
                     <div class="card-body">
                         <form action="/student-info" method="post">
                             @csrf

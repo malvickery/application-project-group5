@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center mt-10">
-        <div class=col-12">
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="col-12 mt-10">
             <div class="row">
                 <div class="card bg-grey-lighter">
                     <div class="card-body">

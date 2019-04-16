@@ -31,13 +31,18 @@
                     </a>
                 </div>
                 <div>
-                    <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
-                        <i class="fas fa-bullhorn"></i> Announcements
+                    <a href="/dashboard/view" class="btn btn-secondary w-full rounded-none">
+                        <i class="fas fa-bullhorn"></i> Edit Announcements
                     </a>
                 </div>
                 <div>
-                    <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
-                        <i class="far fa-newspaper"></i> Register
+                    <a href="/student-info/create" class="btn btn-secondary w-full rounded-none">
+                        <i class="far fa-newspaper"></i> Student Register
+                    </a>
+                </div>
+                <div>
+                    <a href="/instructor-info/create" class="btn btn-secondary w-full rounded-none">
+                        <i class="far fa-newspaper"></i> Instructor Register
                     </a>
                 </div>
 
