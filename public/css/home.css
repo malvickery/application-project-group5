@@ -243,3 +243,7 @@ main {
     margin-top: 5%;
     margin-left: 20%;
 }
+
+.navbar {
+    z-index: 100;
+}

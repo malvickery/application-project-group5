@@ -244,3 +244,6 @@ main {
     margin-left: 20%;
 }
 
+.navbar {
+    z-index: 100;
+}
