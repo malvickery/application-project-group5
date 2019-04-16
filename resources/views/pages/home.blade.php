@@ -192,7 +192,7 @@
 
             if (currentDate.getMonth() <= savedDate.getMonth(eventsData[i].training_date) && currentDate.getDate() <= savedDate.getDate(eventsData[i].training_date)  ){
                 $("#eventList").append(
-                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+`, `+savedDate.getDate(eventsData[i].training_date)+`, `+savedDate.getFullYear(eventsData[i].training_date)+`</li>
+                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+` `+savedDate.getDate(eventsData[i].training_date)+`, `+savedDate.getFullYear(eventsData[i].training_date)+`</li>
                     <p> `+eventsData[i].title+`</p>`)
             }
 

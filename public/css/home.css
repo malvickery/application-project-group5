@@ -8,8 +8,13 @@ body {
     min-height: 100vh;
 }
 
-.mt-32 {
-    margin-top: 1%;
+.mt-32, #mainCard {
+    margin-top: 4rem;
+    margin-left: -1rem;
+}
+
+.nav-item {
+    list-style-type: none;
 }
 
 #home.jumbotron {
@@ -246,4 +251,6 @@ main {
 
 .navbar {
     z-index: 100;
+    position: fixed;
+    width: 68rem;
 }

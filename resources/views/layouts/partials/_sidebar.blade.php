@@ -26,6 +26,21 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
+                        <i class="fas fa-calendar-alt"></i> Calendar
+                    </a>
+                </div>
+                <div>
+                    <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
+                        <i class="fas fa-bullhorn"></i> Register
+                    </a>
+                </div>
+                <div>
+                    <a href="/calendar/create" class="btn btn-secondary w-full rounded-none">
+                        <i class="far fa-newspaper"></i> Register
+                    </a>
+                </div>
 
         </nav>
         <div class="sidebar-footer d-flex justify-content-sm-around">
