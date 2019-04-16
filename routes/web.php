@@ -46,3 +46,8 @@ Route::get('/admin-view/list-instructors', 'InstructorViewController@index');
 
 Route::post('/delete/student','ViewStudentsController@destroy');
 Route::post('/delete/instructor','InstructorViewController@destroy');
+
+Route::get('/dashboard/view', 'DashboardInputsController@index');
+Route::post('/announcement/edit', 'DashboardInputsController@store');
+
+
