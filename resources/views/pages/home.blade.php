@@ -21,9 +21,9 @@
                                                 <td style="width:25%;">Skiers</td>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             style="width: 83.3%;background-color: #c32b32;margin-left:0;"
-                                                             aria-valuenow="100"
+                                                        <div class="progress-bar" id="ski"  role="progressbar"
+                                                             
+                                                             aria-valuenow="20"
                                                              aria-valuemin="0" aria-valuemax="120">100
                                                         </div>
                                                     </div>
@@ -34,7 +34,7 @@
                                                 </th>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
+                                                        <div class="progress-bar" id="snow" role="progressbar"
                                                              style="width: 75%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="15"
                                                              aria-valuemin="0" aria-valuemax="20">15
@@ -47,7 +47,7 @@
                                                 </th>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
+                                                        <div class="progress-bar" id="sit" role="progressbar"
                                                              style="width: 50%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="10"
                                                              aria-valuemin="0" aria-valuemax="20">10
@@ -67,7 +67,7 @@
                                                 <td style="width:25%;">Skiers</td>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
+                                                        <div class="progress-bar" id="insSki" role="progressbar"
                                                              style="width: 50%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="100"
                                                              aria-valuemin="0" aria-valuemax="240">120
@@ -80,8 +80,8 @@
                                                 </th>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             style="width: 50%;background-color: #c32b32;margin-left:0;"
+                                                        <div class="progress-bar" id="insSnow" role="progressbar"
+                                                             style="width: 50%;background-color:#c32b32;margin-left:0;"
                                                              aria-valuenow="15"
                                                              aria-valuemin="0" aria-valuemax="30">15
                                                         </div>
@@ -93,7 +93,7 @@
                                                 </th>
                                                 <td>
                                                     <div class="progress" style="height: 20px;">
-                                                        <div class="progress-bar" role="progressbar"
+                                                        <div class="progress-bar" id="insSit" role="progressbar"
                                                              style="width: 25%;background-color: #c32b32;margin-left:0;"
                                                              aria-valuenow="10"
                                                              aria-valuemin="0" aria-valuemax="40">10
@@ -159,8 +159,9 @@
     var months     = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var eventsData;
 
+    var studentData;
+
     getEvents();
-    console.log("here");
     function getEvents() {
 
         let url = "/home/getEvents";
@@ -168,8 +169,14 @@
             type: "GET",
             url: url,
             success: function (resultData) {
-                eventsData = resultData.msg;
-                randerEvents();
+
+                if(resultData){
+                    eventsData = resultData.cal;
+                    studentData = resultData.students;
+                    randerEvents();
+                    randerStudents();
+                }
+                
 
             },
             error: function (jXHR, textStatus, errorThrown) {
@@ -192,12 +199,65 @@
 
             if (currentDate.getMonth() <= savedDate.getMonth(eventsData[i].training_date) && currentDate.getDate() <= savedDate.getDate(eventsData[i].training_date)  ){
                 $("#eventList").append(
-                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+` `+savedDate.getDate(eventsData[i].training_date)+`, `+savedDate.getFullYear(eventsData[i].training_date)+`</li>
+                    `<li class="text-red-lighter font-bold text-xl">`+months[savedDate.getMonth(eventsData[i].training_date)]+`, `+ (eventsData[i].training_date).substring(8,10)+` , `+ savedDate.getFullYear(eventsData[i].training_date)+`</li>
                     <p> `+eventsData[i].title+`</p>`)
             }
 
 
         }
+    }
+
+    function randerStudents(){
+
+        var skiingCount = 0;
+        var snowbordCount = 0;
+        var sitSkiingCount = 0;
+
+        for (let i = 0; i < studentData.length; i++) {
+            if (studentData[i].ski_type == "ski"){
+                skiingCount++
+                $("#ski").attr("style","background-color: #c32b32;width: calc("+skiingCount+"/100),margin-left:0");
+                $("#ski").text(skiingCount);
+
+            }
+            else if(studentData[i].ski_type == "Snowbording"){
+                snowbordCount++
+                $("#snow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
+                $("#snow").text(snowbordCount);
+            }
+            else if(studentData[i].ski_type == "Sit Skiing"){
+                sitSkiingCount++
+                $("#sit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
+                $("#sit").text(sitSkiingCount);
+            }
+        }
+
+    }
+
+    function renderInstructors(){
+        var skiingCount = 0;
+        var snowbordCount = 0;
+        var sitSkiingCount = 0;
+
+        for (let i = 0; i < studentData.length; i++) {
+            if (studentData[i].ski_type == "ski"){
+                skiingCount++
+                $("#insSit").attr("style","background-color: #c32b32;width: calc("+skiingCount+"/100),margin-left:0");
+                $("#insSit").text(skiingCount);
+
+            }
+            else if(studentData[i].ski_type == "Snowbording"){
+                snowbordCount++
+                $("#insSnow").attr("style","background-color: #c32b32;width: calc("+snowbordCount+"/100),margin-left:0");
+                $("#insSnow").text(snowbordCount);
+            }
+            else if(studentData[i].ski_type == "Sit Skiing"){
+                sitSkiingCount++
+                $("#insSit").attr("style","background-color: #c32b32;width: calc("+sitSkiingCount+"/100),margin-left:0");
+                $("#insSit").text(sitSkiingCount);
+            }
+        }
+
     }
 
     </script>   
