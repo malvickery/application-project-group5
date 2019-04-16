@@ -2,8 +2,8 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container mt-32" id="home">
-        <div class="col-12">
+    <div class="container" id="home">
+        <div class="col-12  mt-10">
             <div class="row">
                 <div class="col-12 px-0">
                     <div class="card flex justify-between bg-black opacity-95 text-white">
